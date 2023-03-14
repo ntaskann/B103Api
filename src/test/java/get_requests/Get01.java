@@ -29,7 +29,7 @@ public class Get01 {
         //ii)  Set the expected data
 
         //iii) Send the request and get the response
-        Response response = given().when().get("https://restful-booker.herokuapp.com/booking/53");
+        Response response = given().when().get(url);
         response.prettyPrint();
 
         //iv)  Do assertion
