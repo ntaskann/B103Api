@@ -1,13 +1,15 @@
 package get_requests;
 
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.*;
 
-public class Get04 {
+public class Get04 extends JsonPlaceHolderBaseUrl {
 
     /*
         Given
@@ -29,17 +31,23 @@ public class Get04 {
      */
 
     @Test
-    public void test() {
+    public void get04() {
 
-//        //Set the URL
-//        String url = "https://jsonplaceholder.typicode.com/todos";
-//
-//        Response response = given().when().get(url);
-//        response.prettyPrint();
-//
-//        response.then().
-//                statusCode(200).
-//                contentType(ContentType.JSON).
+        //Set the URL
+//      String url = "https://jsonplaceholder.typicode.com/todos";
+
+        spec.pathParam("first", "todos");
+
+        Response response = given().spec(spec).accept(ContentType.JSON).when().get("/{first}");
+        response.prettyPrint();
+
+        //Do Assertion
+        response.then().
+                statusCode(200).
+                contentType(ContentType.JSON).
+                body("id", hasSize(200),
+                        "userId", hasItems(2, 7, 9),
+                        "title", hasItem("quis eius est sint explicabo"));
 
     }
 
