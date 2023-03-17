@@ -33,6 +33,14 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
                                     }
      */
 
+     /*
+        De-Serialization: Json datanın Java objesine çevrilmesi.
+        Serialization: Java objesinin, Json dataya çevrilmesi.
+        2 türlü De-Serialization yapacağız:
+            i) Gson: Google tarafından üretilmiştir.
+            ii) Object Mapper: En popüleri
+    */
+
     @Test
     public void post01() {
 
