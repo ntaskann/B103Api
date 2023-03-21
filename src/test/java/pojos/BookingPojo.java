@@ -48,7 +48,7 @@ public class BookingPojo {
         this.totalprice = totalprice;
     }
 
-    public boolean isDepositpaid() {
+    public boolean getDepositpaid() {
         return depositpaid;
     }
 
