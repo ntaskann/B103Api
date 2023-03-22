@@ -66,7 +66,7 @@ public class Put02 extends DummyRestApiBaseUrl {
         assertEquals(expectedData.getEmployee_age(), actualData.getData().getEmployee_age());
         assertEquals(expectedData.getProfile_image(), actualData.getData().getProfile_image());
 
-""
+
 
 
     }
