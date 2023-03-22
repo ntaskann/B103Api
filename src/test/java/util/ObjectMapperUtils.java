@@ -13,7 +13,6 @@ public class ObjectMapperUtils {
      */
     public static <T> T convertJsontoJava(String json, Class<T> cls) { //Generic method
 
-
         try {
             return new ObjectMapper().readValue(json, cls);
         } catch (IOException e) {

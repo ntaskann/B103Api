@@ -35,7 +35,7 @@ public class Post05ObjectMapper_Pojo extends JsonPlaceHolderBaseUrl {
                                "id": 201
                                }
 */
-    @Test
+    @Test   // En iyi yontem
     public void post05() {
         //Set the url
         spec.pathParam("first", "todos");
