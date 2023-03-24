@@ -22,7 +22,7 @@ public class AuthenticationHerOkuApp {
         tokenBody.put("password", "password123");
 
         Response response = given().contentType(ContentType.JSON).body(tokenBody).when().post(url);
-        response.prettyPrint();
+        //response.prettyPrint();
 
         return response.jsonPath().getString("token");
 
