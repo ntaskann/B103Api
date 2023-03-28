@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class Hw01 extends HerOkuAppBaseUrl {
+public class Get04 extends HerOkuAppBaseUrl {
 
 
     /*
@@ -23,19 +23,20 @@ public class Hw01 extends HerOkuAppBaseUrl {
 
      */
     @Test
-    public void hw01() {
+    public void get04() {
         //Set the Url
         spec.pathParam("first", "booking").
-                queryParams("firstname", "Almedin", "lastname", "Alikadic");
+                queryParams("firstname", "Josh", "lastname", "Allen");
 
         //Set the expected data
 
         //Set the request and get the response
-        Response response = given().spec(spec).when().get("/{first}");
+        Response response = given().spec(spec).when().get("{first}");
         response.prettyPrint();
 
         //Do Assertion
         assertEquals(200, response.statusCode());
+        assertTrue(response.asString().contains("bookingid"));
 
     }
 }
